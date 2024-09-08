@@ -10,7 +10,22 @@ import java.util.Scanner;
 public class Triangulo {
     public static String evaluar(double a, double b, double c) {
         // TODO: Coloca aquí el código del ejercicio 7: Triángulos
-        return "";
+        boolean rabc = !(c > (a+b));
+        boolean racb = !(b > (a+c));
+        boolean rbca = !(a > (b+c));
+
+        if(rabc && racb && rbca){
+            if(a==b && a==c){
+                return "El triángulo es equilátero";
+            } else if (a==b || a== c || b== c) {
+                return "El triángulo es isósceles";
+            } else {
+                return "El triángulo es escaleno";
+            }
+        }else {
+            return "No es un triángulo válido";
+        }
+
     }
     
     public static void main(String[] args) {

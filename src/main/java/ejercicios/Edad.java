@@ -2,6 +2,8 @@
 package ejercicios;
 
 import static ejercicios.SetDeTenis.evaluar;
+
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -11,7 +13,22 @@ import java.util.Scanner;
 public class Edad {
     public static String evaluar(int dia, int mes, int anno) {
         // TODO: Coloca aquí el código del ejercicio 6: Edad
-        return "";
+
+        LocalDate currentDate = LocalDate.now();
+        int day = currentDate.getDayOfMonth();
+        int month = currentDate.getMonthValue();
+        int year = currentDate.getYear();
+
+        int edad = (year - anno)-1;
+
+        if(mes == month && day >= dia){
+            edad++;
+            return "Usted tiene "+edad+" años";
+        } else if (mes < month) {
+            edad++;
+            return "Usted tiene "+edad+" años";
+        }
+        return "Usted tiene "+edad+" años";
     }
     
     public static void main(String[] args) {

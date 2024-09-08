@@ -13,10 +13,24 @@ public class Division {
         // TODO: Coloca aquí el código del ejercicio 3: Division
         int cociente = 0;
         int residuo = 0;
+
+        cociente = dividendo / divisor;
+        residuo = dividendo % divisor;
+
         String respuesta = "La división es exacta. \n"
                 + "Cociente: " + cociente + "\n"
                 + "Residuo: " + residuo;
-        return respuesta;
+
+        if(residuo == 0){
+            return respuesta;
+        } else {
+            respuesta =  "La división no es exacta. \n"
+                    + "Cociente: " + cociente + "\n"
+                    + "Residuo: " + residuo;
+            return respuesta;
+        }
+
+
     }
     
     public static void main(String[] args) {
